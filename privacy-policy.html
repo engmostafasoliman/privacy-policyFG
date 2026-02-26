@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy – Focus Guard</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0f1e;
+    --surface: #111827;
+    --border: #1e2d45;
+    --accent: #4f8ef7;
+    --accent2: #7c3aed;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --heading: #f8fafc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  /* Background glow */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(79,142,247,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 64px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .app-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 8px 20px;
+    margin-bottom: 28px;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 800;
+    color: var(--heading);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  h1 span {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .last-updated {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  section {
+    margin-bottom: 48px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: border-color 0.3s;
+  }
+
+  section:hover {
+    border-color: rgba(79,142,247,0.3);
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--heading);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  h2 .icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, rgba(79,142,247,0.2), rgba(124,58,237,0.2));
+    border: 1px solid rgba(79,142,247,0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  p {
+    color: var(--text);
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+  }
+
+  ul li {
+    padding: 8px 0 8px 20px;
+    position: relative;
+    color: var(--text);
+    font-weight: 300;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  ul li:last-child { border-bottom: none; }
+
+  ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+
+  strong {
+    color: var(--heading);
+    font-weight: 500;
+  }
+
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(79,142,247,0.08), rgba(124,58,237,0.08));
+    border: 1px solid rgba(79,142,247,0.2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #94a3b8;
+  }
+
+  .contact-card {
+    background: linear-gradient(135deg, rgba(79,142,247,0.1), rgba(124,58,237,0.1));
+    border: 1px solid rgba(79,142,247,0.25);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+  }
+
+  .contact-card a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .contact-card a:hover { text-decoration: underline; }
+
+  footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  footer strong {
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="app-badge">
+      <span class="dot"></span>
+      Focus Guard
+    </div>
+    <h1>Privacy <span>Policy</span></h1>
+    <p class="last-updated">Last updated: February 26, 2026</p>
+  </header>
+
+  <section>
+    <h2><span class="icon">👋</span> Introduction</h2>
+    <p>Welcome to <strong>Focus Guard</strong> — a smart app time control and productivity tool designed to help you manage screen time, reduce distractions, and improve focus.</p>
+    <p>This Privacy Policy explains how we handle information when you use our app. We are committed to protecting your privacy and being transparent about our data practices.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">📦</span> Information We Collect</h2>
+    <p>Focus Guard is designed with a <strong>privacy-first</strong> approach. We do not collect, store, or share any personal information.</p>
+    <p>The app may locally process the following on your device only:</p>
+    <ul>
+      <li>Focus session duration and timer data</li>
+      <li>Weekly progress and streak statistics</li>
+      <li>App usage time during focus sessions</li>
+      <li>User-configured settings and preferences</li>
+    </ul>
+    <div class="highlight-box">
+      ✅ All data is stored <strong>locally on your device</strong> and never transmitted to external servers.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🚫</span> Data We Do NOT Collect</h2>
+    <p>Focus Guard does <strong>not</strong> collect:</p>
+    <ul>
+      <li>Your name, email address, or any personal identifiers</li>
+      <li>Phone number or device contacts</li>
+      <li>Location data (GPS or network-based)</li>
+      <li>Camera or microphone access</li>
+      <li>Browsing history or search queries</li>
+      <li>Financial or payment information</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔒</span> App Usage & Permissions</h2>
+    <p>To provide its core functionality, Focus Guard may request the following device permissions:</p>
+    <ul>
+      <li><strong>Usage Access:</strong> To monitor and limit app usage during focus sessions. This data is processed locally and never leaves your device.</li>
+      <li><strong>Draw Over Other Apps:</strong> To display focus session overlays that prevent distraction.</li>
+      <li><strong>Notification Access:</strong> To send focus reminders and session alerts.</li>
+    </ul>
+    <p>These permissions are used <strong>solely</strong> to provide the app's core features. You can revoke them at any time in your device settings.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🤝</span> Third-Party Services</h2>
+    <p>Focus Guard may use the following third-party services for analytics or crash reporting. These services may collect anonymous, aggregated data:</p>
+    <ul>
+      <li>Google Play Services (Android) / Apple App Store Services (iOS)</li>
+      <li>Firebase Crashlytics (anonymous crash reports only)</li>
+    </ul>
+    <p>We do not sell, rent, or share your data with any third party for advertising or marketing purposes.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">👶</span> Children's Privacy</h2>
+    <p>Focus Guard does not knowingly collect any personal information from children under the age of 13. The app is designed as a productivity tool suitable for all ages.</p>
+    <p>If you believe a child has provided us with personal information, please contact us immediately and we will take steps to remove such data.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔄</span> Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be reflected by updating the "Last updated" date at the top of this page.</p>
+    <p>We encourage you to review this policy periodically. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">✉️</span> Contact Us</h2>
+    <p>If you have any questions or concerns about this Privacy Policy or our data practices, please reach out to us:</p>
+    <div class="contact-card">
+      <p><strong>App Name:</strong> Focus Guard</p>
+      <p><strong>Email:</strong> <a href="mailto:devmostafasoliman@gmail.com">devmostafasoliman@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 <strong>Focus Guard</strong>. All rights reserved.</p>
+    <p style="margin-top:8px;">This privacy policy was created to comply with Google Play and Apple App Store requirements.</p>
+  </footer>
+</div>
+</body>
+</html>
